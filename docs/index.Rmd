@@ -1,0 +1,119 @@
+---
+title: The dynamic landscape of peptide function prediction
+output: 
+  html_document:
+    theme: paper                                                                 
+---      
+
+<style type="text/css">
+.main-container {
+max-width: 1800px;
+margin-left: auto;
+margin-right: auto;
+}
+</style>
+
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(DT)
+library(dplyr)
+
+dat <- readr::read_csv("../data/amyloid_db.csv") %>% 
+  # filter(`Current status` == "Active") %>% 
+  mutate(DOI = paste0("<a href='", doi,"' >", doi,"</a>"),
+         Link = paste0("<a href='", link,"' > link </a>")) %>% 
+  select("Database", "DOI", "Link", "Focus...3", "Tipe of data", "Includes experimental conditions", "Focus...6",
+         "Includes structural information", "Identifies APRs", "sources_and_links", "Current status", "Last updated")
+
+
+hover_text <- c("Name of a database",
+                "DOI for publications",
+                "Link to the database",
+                "Protein focus of database",
+                "Type of data database provides",
+                "Indicates if database includes experimental conditions",
+                "Indicates if database is ",
+                "Indicates if database contains structural information of proteins and peptides",
+                "Indicates if database identifies amyloidogenic regions of proteins",
+                "The sources and links to other databases",
+                "Current status of database",
+                "The last update")
+
+
+headerCallback <- c(
+  "function(thead, data, start, end, display){",
+  "  var ncols = data[0].length;",
+  sprintf("  var shortnames = [%s]",
+          paste0(paste0("'",colnames(dat),"'"), collapse = ",")),
+  sprintf("  var tooltips = [%s];",
+          paste0(paste0("'", hover_text,"'"), collapse = ",")),
+  "  for(var i=0; i<ncols; i++){",
+  "    $('th:eq('+i+')',thead).attr('title', tooltips[i]).text(shortnames[i]);",
+  "  }",
+  "}"
+)
+
+```
+
+## {.tabset}
+
+### Software information
+
+```{r}
+datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader'), 
+          filter = "top", style = "bootstrap",
+          class = "display",
+          rownames = FALSE, escape = FALSE,
+          options = list(dom = "Birt", pageLength = nrow(dat), info = FALSE,
+                         buttons = c("copy", "csv", "excel", "print"),
+                         autoWidth = TRUE,
+                         # scrollY = 700,
+                         # scrollX = TRUE,
+                         scrollCollapse = FALSE,
+                         fixedHeader = TRUE,
+                         # columnDefs = list(list(width = '200px', targets = c(0))),
+                         fixedColumns = list(leftColumns = 1),
+                         filter = list(clear = FALSE, plain = TRUE),
+                        # lengthMenu = list(25, 50, 75, 100, 125, 150),
+                         headerCallback = JS(headerCallback))) %>%  
+  formatStyle(c("Database", "DOI", "Link", "Focus...3", "Tipe of data", "Includes experimental conditions"),
+              backgroundColor = styleEqual(c(FALSE, TRUE), c('#ededed', '#d6edff')))  %>%
+  formatStyle(c("Focus...6",
+         "Includes structural information", "Identifies APRs", "sources_and_links", "Current status", "Last updated"),
+              backgroundColor = styleEqual("false", '#ededed', default = '#d6edff'))
+```
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  
+### Data collection & curation
+
+To collect software for the prediction of peptide activities, we searched PubMed and Google Scholar databases using queries such as "antimicrobial peptide prediction", "anticancer peptide prediction", etc. We focused on the search results that described software or reviewed/compared available tools for the prediction of a given activity. 
+
+Eligibility criteria:
+
+ - the tool needs to be published in a peer-review journal until 1st July 2022.
+ - we include models that are superceded by their next version. 
+ 
+We manually curated all information for software featured in a 'Software information' tab. To do that we carefully analysed publications describing given software looking for the following information: 
+
+- peptide activities predicted by a model, 
+- link to the web server (**Web server** column), 
+- link to the model, i.e. a repository with a trained model which can be used for prediction or an address of the model implemented as standalone software (**Model repository** column),
+- link to the repository with all the code and data necessary to train/retrain the model (**Training repository** column).
+
+Then, we checked if the links to the web servers provided in the articles were still working and if they function correctly, i.e. provide understandable output after running prediction. This information is indicated in the **Web server activity** and **Web server functionality** columns, respectively. 
+
+The availability of web servers was assessed on October 14th, 2022. The year of publication and the number of citations were obtained from CrossRef on October 14th, 2022. 
+
+We also inspected available code to determine the reproducibility standard (adapted from [Heil et al.](https://doi.org/10.1038/s41592-021-01256-7) and indicated in the **Reproducibility standard** column). We are additionally using the category *below bronze*, when a model does not fulfill criteria even for the bronze category.
+
+
+
+### About and citation
+
+```{r, echo=FALSE,results='asis'}
+cat(readLines("../data/citation.md"), sep = "\n")
+```

@@ -1,0 +1,27 @@
+Described,Database,Focus,Tipe of data,Includes experimental conditions,Focus,Includes structural information,Identifies APRs,Current status,Last updated,doi,link,protein_types,protein_origins,experimental_results,in_silico_results,interactions_crossinteractions,only_amyloid-like,3d_structures,download,sources_and_links,notes
+TRUE,Amyloid Atlas 2024,Amyloids,Experimental,No,General,Structure for the wt protein and the aggregate,No,Active,22-05-2024,https://doi.org/10.1016/j.cell.2021.08.013,https://people.mbi.ucla.edu/sawaya/amyloidatlas/,multiple,yes,yes,no,no,yes,yes,single file,PDB,polarity and energy maps
+TRUE,CARs DB,IDP regions,Prediction,No,General,Sequence-only,APRs,Active,08-09-2023,https://doi.org/10.1007/978-1-0716-3441-7_10,http://carsdb.ppmclab.com/,multiple,yes,no,yes,no,yes,no,easy,"DisProt, UniProt, Waltz",cryptic amyloidogenic regions
+FALSE,AmyloGraph,interactions,Experimental,No,General,Sequence-only,No,Active,08-06-2023,https://doi.org/10.1093/nar/gkac882,http://amylograph.com/,multiple,no,yes,no,yes,yes,no,easy,PubMed,amyloid-amyloid interactions
+FALSE,AL-Base,Amyloids,Experimental,No,Specific,Sequence-only,No,Active,18-05-2024,https://doi.org/10.1080/13506120802676781,https://wwwapp.bumc.bu.edu/BEDAC_ALBase/,light chains,yes,yes,no,no,yes,no,easy,NCBI,
+TRUE,Waltz DB 2.0,Amyloids,both,Yes,General,Structure for the wt protein and the aggregate,APRs,Active,08-01-2020,https://doi.org/10.1093/nar/gkz758,http://waltzdb.switchlab.org/,multiple,no,yes,yes,no,no,yes,easy,"PubMed, Uniprot",
+FALSE,CPAD2,Amyloids,Experimental,Yes,General,Structure for the wt protein,APRs,Active,15-04-2024,https://doi.org/10.1080/13506129.2020.1715363,https://web.iitm.ac.in/bioinfo2/cpad2/index.html,multiple,yes,yes,no,no,no,yes,easy,"CPAD, Waltz, AmyLoad, AmyPro, UniProt, PDB",
+FALSE,StAmP,Amyloids,both,No,General,Sequence-only,APRs,Active,09-03-2022,https://doi.org/10.1093/bioinformatics/btac126,https://stamp.switchlab.org/,multiple,no,yes,yes,no,yes,yes,easy,"PDB, Uniprot",
+TRUE,AmyLoad,Amyloids,both,Yes,General,Sequence-only,No,Active,17-06-2015,https://doi.org/10.1093/bioinformatics/btv375,http://comprec-lin.iiar.pwr.edu.pl/amyload/,multiple,no,yes,yes,no,no,no,easy,"TANGO, Waltz, AmylFrag, Aggrescan, AmylHex, ",
+TRUE,AmyPro,Amyloids,Experimental,No,General,Structure for the wt protein,APRs,Active,25-08-2023,https://doi.org/10.1093/nar/gkx950,http://amypro.net,multiple,yes,yes,no,no,no,yes,easy,"PDB, Uniprot, PubMed",
+TRUE,A3D-MODB,Amyloids,Prediction,No,General,Structure for the wt protein and the aggregate,STAPs,Active,28-10-2023,https://doi.org/10.1093/nar/gkad942,https://biocomp.chem.uw.edu.pl/A3D2/MODB,,,,,,,,,,
+FALSE,Cross-Beta DB,Amyloids,both,Yes,General,Structure for the wt protein,APRs,Active,01-05-2024,https://doi.org/10.1101/2024.02.12.579644,https://crossbetadb.crbm.cnrs.fr/,multiple,yes,yes,yes,no,yes,yes,easy,"PDB, AmyPro, Uniprot, PubMed",
+TRUE,SAPdb,other,Experimental,Yes,Specific,Structure for the wt protein,STAPs,Active,10-04-2021,https://doi.org/10.1016/j.compbiomed.2021.104391,https://webs.iiitd.edu.in/raghava/sapdb/,multiple,no,yes,yes,no,no,yes,no,,
+FALSE,Fibrilizer,Amyloids,Prediction,No,Specific,Structure for the wt protein,No,Active,05-02-2013,http://dx.doi.org/10.1016/j.bpj.2012.12.037,https://amyloid.cs.mcgill.ca/database/index.html,multiple,no,no,yes,no,yes,yes,easy,,
+,ZipperDB,Amyloids,Prediction,No,General,Structure for the wt protein and the aggregate,APRs,Non-active,,https://doi.org/10.1073/pnas.0915166107,https://services.mbi.ucla.edu/zipperdb/intro,,,,,,,,,,
+TRUE,PrionScan,Prion,Prediction,No,General,Sequence-only,APRs,Active,03-07-2019,https://doi.org/10.1186/1471-2164-15-102,http://webapps.bifi.es/prionscan,multiple,yes,no,yes,no,yes,no,easy,,
+,pE-DB,,,,,,,Non-active,dead,https://doi.org/10.1093/nar/gkt960,https://pedb.vib.be/,,,,,,,,,,
+,AmyPDB,,,,,,,Non-active,dead,https://doi.org/10.1186/1471-2105-9-273,http://amypdb.genouest.org/; https://amypdb.univ-rennes1.fr/,,,,,,,,,,
+,ProADD,,,,,,,Non-active,dead,https://doi.org/10.6026%2F97320630010390,http://bicmku.in/ProADD,,,,,,,,,,
+,AmyCo,,,,,,,Non-active,dead,https://doi.org/10.1080/13506129.2019.1603143,http://bioinformatics.biol.uoa.gr/amyco,,,,,,,,,,
+,fibril_one,,,,,,,Non-active,dead,https://doi.org/10.1110%2Fps.0204302,http://www.bioinformatics.leeds.ac.uk/group/online/fibril_one,,,,,,,,,,
+TRUE,AmyloBase,Amyloids,Experimental,Yes,General,Sequence-only,No,Active,12-07-2024,https://doi.org/10.1038%2Fembor.2011.116,http://bioserver2.sbsc.unifi.it/AmyloBase.html,multiple,yes,yes,no,no,no,no,easy-medium,Pubmed,
+,Amyloïdose gezamenlijk,,,,,,,Non-active,dead,https://doi.org/10.3109/13506129.2014.964858,http://www.amyloidosis.nl/,,,,,,,,,,
+,amyloid interactome,,,,,,,Non-active,dead,https://doi.org/10.1371/journal.pone.0173163,http://83.212.109.111/amyloid_interactome,,,,,,,,,,
+TRUE,PrionHome,Prion,both,Yes,General,Structure for the wt protein,No,Non-active,dead,https://doi.org/10.1371/journal.pone.0031785,https://libaio.biol.mcgill.ca/prion,,,,,,,,,,
+,THERPA v2,,,,,,,Non-active,dead,http://dx.doi.org/10.1080/19336896.2019.1689789,http://www.nih.go.kr/therpa ; https://therpa.pythonanywhere.com/,,,,,,,,,,
+TRUE,The Prion Disease Database,Prion,Experimental,Yes,Specific,Sequence-only,No,Non-active,dead,https://doi.org/10.1093/database/bap011,http://prion.systemsbiology.net,,,,,,,,,,

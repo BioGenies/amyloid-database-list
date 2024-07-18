@@ -21,26 +21,28 @@ knitr::opts_chunk$set(echo = FALSE)
 library(DT)
 library(dplyr)
 
-dat <- readr::read_csv("../data/amyloid_db.csv") %>% 
+dat <- readr::read_csv("../data/amyloid_db.csv", col_select = c(, 1:14), col_types = "fcfffffff?cccf") %>% 
   # filter(`Current status` == "Active") %>% 
-  mutate(DOI = paste0("<a href='", doi,"' >", doi,"</a>"),
-         Link = paste0("<a href='", link,"' > link </a>")) %>% 
-  select("Database", "DOI", "Link", "Focus...3", "Tipe of data", "Includes experimental conditions", "Focus...6",
-         "Includes structural information", "Identifies APRs", "sources_and_links", "Current status", "Last updated")
+  mutate(DOI = paste0("<a href='", doi,"' >", str_remove(doi, 'https://doi.org/'),"</a>"),
+         Database = paste0("<a href='", link,"' >", Database, "</a>"),
+         `Last updated` = `Last updated` %>% as.Date(., "%d-%m-%Y"),) %>% 
+  select("Database", "Focus", "Type of data", "Only amyloids", "Includes experimental conditions", "Usability",
+         "Includes structural information", "Identifies APRs", "Data sources and links to other db", "Current status", "Last updated", "DOI") %>% 
+  arrange(desc(`Last updated`))
 
 
-hover_text <- c("Name of a database",
-                "DOI for publications",
-                "Link to the database",
-                "Protein focus of database",
+hover_text <- c("Name and link to a database",
+                "Focus of database",
                 "Type of data database provides",
+                "Indicates if database includes only amyloid proteins and peptides",
                 "Indicates if database includes experimental conditions",
-                "Indicates if database is ",
+                "Indicates the database usability",
                 "Indicates if database contains structural information of proteins and peptides",
                 "Indicates if database identifies amyloidogenic regions of proteins",
-                "The sources and links to other databases",
+                "The data sources of database and links to other databases",
                 "Current status of database",
-                "The last update")
+                "The last update",
+                "DOI")
 
 
 headerCallback <- c(
@@ -73,16 +75,16 @@ datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader'),
                          # scrollY = 700,
                          # scrollX = TRUE,
                          scrollCollapse = FALSE,
-                         fixedHeader = TRUE,
+                         # fixedHeader = TRUE,
                          # columnDefs = list(list(width = '200px', targets = c(0))),
-                         fixedColumns = list(leftColumns = 1),
+                         # fixedColumns = list(leftColumns = 1),
                          filter = list(clear = FALSE, plain = TRUE),
                         # lengthMenu = list(25, 50, 75, 100, 125, 150),
                          headerCallback = JS(headerCallback))) %>%  
-  formatStyle(c("Database", "DOI", "Link", "Focus...3", "Tipe of data", "Includes experimental conditions"),
+  formatStyle(c("Database", "Focus", "Type of data", "Includes experimental conditions"),
               backgroundColor = styleEqual(c(FALSE, TRUE), c('#ededed', '#d6edff')))  %>%
-  formatStyle(c("Focus...6",
-         "Includes structural information", "Identifies APRs", "sources_and_links", "Current status", "Last updated"),
+  formatStyle(c("Usability",
+         "Includes structural information", "Identifies APRs", "Data sources and links to other db", "Current status", "Last updated", "DOI"),
               backgroundColor = styleEqual("false", '#ededed', default = '#d6edff'))
 ```
 

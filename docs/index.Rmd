@@ -65,7 +65,7 @@ headerCallback <- c(
 
 ## {.tabset}
 
-### Software information
+### Amyloid-related database list
 
 ```{r}
 datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader', 'ColReorder', 'KeyTable'), 

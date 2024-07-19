@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# The dynamic landscape of peptide function prediction
+# The dynamic landscape of amyloid-related databases
 
 <!-- This curated list collects peer-reviewed machine learning models dedicated to predicting specific properties of peptides.  -->
 For an interactive and browse-able list, please visit: https://biogenies.info/amyloid-database-list/.
@@ -34,16 +34,19 @@ write_entry <- function(x) {
 
 
 dat <- readr::read_csv("data/amyloid_db.csv") %>% 
-  # filter(`Current status` == "Active") %>% 
+  filter(`Current status` == "Active") %>%
   select("Database", "Focus", "Type of data", "Only amyloids", "Includes experimental conditions", "Usability",
          "Includes structural information", "Identifies APRs", "Data sources and links to other db", "Current status", "Last updated", "doi", "link")
 
 
-cat_df <- data.frame(categories = c("Active", "Non-active"),
-                     nice_names = c("Active", "Non-active"))
+# cat_df <- data.frame(categories = c("Active", "Non-active"),
+                     # nice_names = c("Active", "Non-active"))
+
+cat_df <- data.frame(categories = c("Experimental", "Prediction", "Both"),
+                     nice_names = c("Experimental", "Prediction", "Both"))
 
 all_tools <- sapply(1L:nrow(cat_df), function(ith_category_id) {
-  part_dat <- dat %>% filter(`Current status` == cat_df[ith_category_id, "categories"])
+  part_dat <- dat %>% filter(`Type of data` == cat_df[ith_category_id, "categories"])
   row_order <- order(part_dat[["Database"]])
   paste0(paste0("## ", cat_df[ith_category_id, "nice_names"], "\n\n"),
          paste0(sapply(row_order, function(ith_row)

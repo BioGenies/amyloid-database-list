@@ -24,10 +24,10 @@ library(stringr)
 
 dat <- readr::read_csv("../data/amyloid_db.csv", col_select = c(, 1:14), col_types = "fcfffffff?cccf") %>% 
   # filter(`Current status` == "Active") %>% 
-  mutate(DOI = paste0("<a href='", doi,"' >", doi %>% 
+  mutate(DOI = paste0("<a href='", doi,"'  target='_blank'>", doi %>% 
                         str_remove(., 'https://doi.org/') 
                       %>% str_remove(., 'http://dx.doi.org/'),"</a>"),
-         Database = paste0("<a href='", link,"' >", Database, "</a>"),
+         Database = paste0("<a href='", link,"'  target='_blank'>", Database, "</a>"),
          `Last updated` = `Last updated` %>% as.Date(., "%d-%m-%Y"),) %>% 
   select("Database", "Focus", "Type of data", "Only amyloids", "Includes experimental conditions", "Usability",
          "Includes structural information", "Identifies APRs", "Current status", "Last updated", "Data sources and links to other db", "DOI") %>% 

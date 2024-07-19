@@ -24,11 +24,13 @@ library(stringr)
 
 dat <- readr::read_csv("../data/amyloid_db.csv", col_select = c(, 1:14), col_types = "fcfffffff?cccf") %>% 
   # filter(`Current status` == "Active") %>% 
-  mutate(DOI = paste0("<a href='", doi,"' >", str_remove(doi, 'https://doi.org/'),"</a>"),
+  mutate(DOI = paste0("<a href='", doi,"' >", doi %>% 
+                        str_remove(., 'https://doi.org/') 
+                      %>% str_remove(., 'http://dx.doi.org/'),"</a>"),
          Database = paste0("<a href='", link,"' >", Database, "</a>"),
          `Last updated` = `Last updated` %>% as.Date(., "%d-%m-%Y"),) %>% 
   select("Database", "Focus", "Type of data", "Only amyloids", "Includes experimental conditions", "Usability",
-         "Includes structural information", "Identifies APRs", "Data sources and links to other db", "Current status", "Last updated", "DOI") %>% 
+         "Includes structural information", "Identifies APRs", "Current status", "Last updated", "Data sources and links to other db", "DOI") %>% 
   arrange(desc(`Last updated`))
 
 
@@ -41,8 +43,8 @@ hover_text <- c("Name and link to a database",
                 "Indicates if database contains structural information of proteins and peptides",
                 "Indicates if database identifies amyloidogenic regions of proteins",
                 "The data sources of database and links to other databases",
-                "Current status of database",
                 "The last update",
+                "Current status of database",
                 "DOI")
 
 
@@ -66,7 +68,7 @@ headerCallback <- c(
 ### Software information
 
 ```{r}
-datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader'), 
+datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader', 'ColReorder', 'KeyTable'), 
           filter = "top", style = "bootstrap",
           class = "display",
           rownames = FALSE, escape = FALSE,
@@ -76,16 +78,24 @@ datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader'),
                          # scrollY = 700,
                          # scrollX = TRUE,
                          scrollCollapse = FALSE,
-                         # fixedHeader = TRUE,
                          # columnDefs = list(list(width = '200px', targets = c(0))),
-                         # fixedColumns = list(leftColumns = 1),
+                         # fixedColumns = list(leftColumns = 1), #FixedColumns
                          filter = list(clear = FALSE, plain = TRUE),
+                         style = "auto",
+                         fillContainer = getOption("DT.fillContainer", NULL),
+                         # fixedHeader = TRUE, #FixedHeader
+                         paging = FALSE,
+                         # scrollY = 300,
+                         scrollCollapse = TRUE,
+                         # fixedHeader = list(header = TRUE, footer = TRUE), #FixedHeader
+                         colReorder = TRUE, #ColReorder
+                         realtime = FALSE, #ColReorder
+                         keys = TRUE, #KeyTable
                         # lengthMenu = list(25, 50, 75, 100, 125, 150),
                          headerCallback = JS(headerCallback))) %>%  
-  formatStyle(c("Database", "Focus", "Type of data", "Includes experimental conditions"),
+  formatStyle(c( "Focus","Usability", "Includes structural information", "Identifies APRs", "Type of data", "Includes experimental conditions", "Current status"),
               backgroundColor = styleEqual(c(FALSE, TRUE), c('#ededed', '#d6edff')))  %>%
-  formatStyle(c("Usability",
-         "Includes structural information", "Identifies APRs", "Data sources and links to other db", "Current status", "Last updated", "DOI"),
+  formatStyle(c("Database","Data sources and links to other db", "Last updated", "DOI"),
               backgroundColor = styleEqual("false", '#ededed', default = '#d6edff'))
 ```
 

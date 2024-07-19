@@ -61,7 +61,7 @@ For an interactive and browse-able list, please visit:
     [publication](https://doi.org/10.3109/13506129.2014.964858);
     [database](http://www.amyloidosis.nl/).
 4.  AmyPDB: [publication](https://doi.org/10.1186/1471-2105-9-273);
-    [database](http://amypdb.genouest.org/;%20https://amypdb.univ-rennes1.fr/).
+    [database](https://amypdb.univ-rennes1.fr/).
 5.  fibril_one: [publication](https://doi.org/10.1110%2Fps.0204302);
     [database](http://www.bioinformatics.leeds.ac.uk/group/online/fibril_one).
 6.  pE-DB: [publication](https://doi.org/10.1093/nar/gkt960);
@@ -74,9 +74,9 @@ For an interactive and browse-able list, please visit:
 9.  The Prion Disease Database:
     [publication](https://doi.org/10.1093/database/bap011);
     [database](http://prion.systemsbiology.net).
-10. THERPA v2:
+10. THERPA:
     [publication](http://dx.doi.org/10.1080/19336896.2019.1689789);
-    [database](http://www.nih.go.kr/therpa%20;%20https://therpa.pythonanywhere.com/).
+    [database](http://www.nih.go.kr/therpa).
 11. ZipperDB: [publication](https://doi.org/10.1073/pnas.0915166107);
     [database](https://services.mbi.ucla.edu/zipperdb/intro).
 

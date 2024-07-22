@@ -93,9 +93,9 @@ datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader', 'ColReor
                          keys = TRUE, #KeyTable
                         # lengthMenu = list(25, 50, 75, 100, 125, 150),
                          headerCallback = JS(headerCallback))) %>%  
-  formatStyle(c( "Focus","Usability", "Includes structural information", "Identifies APRs", "Type of data", "Includes experimental conditions", "Current status"),
+  formatStyle(c( "Focus","Usability", "Includes structural information", "Identifies APRs", "Type of data", "Includes experimental conditions", "Data sources and links to other db", "DOI"),
               backgroundColor = styleEqual(c(FALSE, TRUE), c('#ededed', '#d6edff')))  %>%
-  formatStyle(c("Database","Data sources and links to other db", "Last updated", "DOI"),
+  formatStyle(c("Database", "Current status", "Last updated"),
               backgroundColor = styleEqual("false", '#ededed', default = '#d6edff'))
 ```
 

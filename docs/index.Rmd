@@ -101,28 +101,27 @@ datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader', 'ColReor
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
   
-<!-- ### Data collection & curation -->
+### Data collection & curation
 
-<!-- To collect software for the prediction of peptide activities, we searched PubMed and Google Scholar databases using queries such as "antimicrobial peptide prediction", "anticancer peptide prediction", etc. We focused on the search results that described software or reviewed/compared available tools for the prediction of a given activity.  -->
+To collect amyloid-related databases, we searched PubMed, Google and Google Scholar databases using queries such as "amyloid database", "IDP database", "prion database, etc.
 
-<!-- Eligibility criteria: -->
 
-<!--  - the tool needs to be published in a peer-review journal until 1st July 2022. -->
-<!--  - we include models that are superceded by their next version.  -->
+We manually curated all information for databases featured in a **Amyloid-related database list** tab. To do that we carefully analysed publications and/or websites describing given database looking for the following information:
 
-<!-- We manually curated all information for software featured in a 'Software information' tab. To do that we carefully analysed publications describing given software looking for the following information:  -->
+- link to the web server (integrated into **Database name** column),
+- link to the paper (if applicable) (**DOI** column),
+- external sources of proteins/peptides in database (we didn't mention own discoveries) and links to and other sources that are integrated into the database (**Data sources and links to other db** column).
+- what kind of data do they store (**Type of data** column)
+- current status of database (**Current status**)
 
-<!-- - peptide activities predicted by a model,  -->
-<!-- - link to the web server (**Web server** column),  -->
-<!-- - link to the model, i.e. a repository with a trained model which can be used for prediction or an address of the model implemented as standalone software (**Model repository** column), -->
-<!-- - link to the repository with all the code and data necessary to train/retrain the model (**Training repository** column). -->
+Then, we checked if the links to the databases provided in the articles were still working and if they function correctly. Otherwise, we tried to find the link either through a search engine search or by contacting the database developers. 
 
-<!-- Then, we checked if the links to the web servers provided in the articles were still working and if they function correctly, i.e. provide understandable output after running prediction. This information is indicated in the **Web server activity** and **Web server functionality** columns, respectively.  -->
+The **Updates** tab indicates latest changes in the list.
 
-<!-- The availability of web servers was assessed on October 14th, 2022. The year of publication and the number of citations were obtained from CrossRef on October 14th, 2022.  -->
 
-<!-- We also inspected available code to determine the reproducibility standard (adapted from [Heil et al.](https://doi.org/10.1038/s41592-021-01256-7) and indicated in the **Reproducibility standard** column). We are additionally using the category *below bronze*, when a model does not fulfill criteria even for the bronze category. -->
+### Updates
 
+**22/07/2024** - first release
 
 
 ### About and citation

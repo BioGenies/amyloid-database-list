@@ -21,17 +21,37 @@ knitr::opts_chunk$set(echo = FALSE)
 library(DT)
 library(dplyr)
 library(stringr)
+library(googlesheets4)
 
-dat <- readr::read_csv("../data/amyloid_db.csv", col_select = c(, 1:14), col_types = "fcfffffff?cccf") %>% 
-  # filter(`Current status` == "Active") %>% 
+dat <- read_sheet("https://docs.google.com/spreadsheets/d/14eZvhdwBjI4a9AT7DwS3QbYioYorrzAqu3zgNUZqDSA/edit?usp=sharing",sheet = "database_list", col_types = "c") %>% 
+  select(1:14) %>% 
   mutate(DOI = paste0("<a href='", doi,"'  target='_blank'>", doi %>% 
                         str_remove(., 'https://doi.org/') 
                       %>% str_remove(., 'http://dx.doi.org/'),"</a>"),
          Database = paste0("<a href='", link,"'  target='_blank'>", Database, "</a>"),
-         `Last updated` = `Last updated` %>% as.Date(., "%d-%m-%Y"),) %>% 
+         `Last updated` = `Last updated` %>% as.Date(., "%d-%m-%Y"),
+         Focus = Focus %>% as.factor(),
+         `Type of data` = `Type of data` %>% as.factor(),
+         `Includes experimental conditions` = `Includes experimental conditions` %>% as.factor(),
+         Usability  = Usability %>% as.factor(),
+         `Includes structural information` = `Includes structural information` %>% as.factor(),
+         `Identifies APRs` = `Identifies APRs` %>% as.factor(),
+         `Current status` = `Current status` %>% as.factor(),
+         `Only amyloids` = `Only amyloids` %>% as.factor()) %>% 
   select("Database", "Focus", "Type of data", "Only amyloids", "Includes experimental conditions", "Usability",
          "Includes structural information", "Identifies APRs", "Current status", "Last updated", "Data sources and links to other db", "DOI") %>% 
   arrange(desc(`Last updated`))
+
+# dat <- readr::read_csv("../data/amyloid_db.csv", col_select = c(, 1:14), col_types = "fcfffffff?cccf") %>% 
+#   # filter(`Current status` == "Active") %>% 
+#   mutate(DOI = paste0("<a href='", doi,"'  target='_blank'>", doi %>% 
+#                         str_remove(., 'https://doi.org/') 
+#                       %>% str_remove(., 'http://dx.doi.org/'),"</a>"),
+#          Database = paste0("<a href='", link,"'  target='_blank'>", Database, "</a>"),
+#          `Last updated` = `Last updated` %>% as.Date(., "%d-%m-%Y"),) %>% 
+#   select("Database", "Focus", "Type of data", "Only amyloids", "Includes experimental conditions", "Usability",
+#          "Includes structural information", "Identifies APRs", "Current status", "Last updated", "Data sources and links to other db", "DOI") %>% 
+#   arrange(desc(`Last updated`))
 
 
 hover_text <- c("Name and link to a database",
@@ -121,7 +141,7 @@ The **Updates** tab indicates latest changes in the list.
 
 ### Updates
 
-**22/07/2024** - first release
+**30/07/2024** - first release
 
 
 ### About and citation

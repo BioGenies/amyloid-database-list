@@ -113,10 +113,10 @@ datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader', 'ColReor
                          keys = TRUE, #KeyTable
                         # lengthMenu = list(25, 50, 75, 100, 125, 150),
                          headerCallback = JS(headerCallback))) %>%  
-  formatStyle(c( "Focus","Usability", "Includes structural information", "Identifies APRs", "Type of data", "Includes experimental conditions", "Data sources and links to other db", "DOI"),
-              backgroundColor = styleEqual(c(FALSE, TRUE), c('#ededed', '#d6edff')))  %>%
-  formatStyle(c("Database", "Current status", "Last updated"),
-              backgroundColor = styleEqual("false", '#ededed', default = '#d6edff'))
+  formatStyle(c("Database", "Last updated"),
+              backgroundColor = '#d6edff') %>% 
+  formatStyle(c("Current status"),
+              backgroundColor = styleEqual(c("Active", "Non-active"), c('#d6edff', 'gray'), default = '#d6edff'))
 ```
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">

@@ -20,7 +20,7 @@ For an interactive and browse-able list, please visit:
     [database](http://bioserver2.sbsc.unifi.it/AmyloBase.html).
 3.  AmyloGraph: [publication](https://doi.org/10.1093/nar/gkac882);
     [database](http://amylograph.com/).
-4.  Amyloid Atlas 2024:
+4.  Amyloid Atlas:
     [publication](https://doi.org/10.1016/j.cell.2021.08.013);
     [database](https://people.mbi.ucla.edu/sawaya/amyloidatlas/).
 5.  AmyPro: [publication](https://doi.org/10.1093/nar/gkx950);
@@ -33,8 +33,8 @@ For an interactive and browse-able list, please visit:
 
 ## Prediction
 
-1.  A3D-MODB: [publication](https://doi.org/10.1093/nar/gkad942);
-    [database](https://biocomp.chem.uw.edu.pl/A3D2/MODB).
+1.  aSynPEP-DB: [publication](https://doi.org/10.1093/database/baad084);
+    [database](https://asynpepdb.ppmclab.com/).
 2.  CARs DB: [publication](https://doi.org/10.3389/fmolb.2022.882160);
     [database](http://carsdb.ppmclab.com/).
 3.  Fibrilizer:

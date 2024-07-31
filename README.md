@@ -14,22 +14,17 @@ For an interactive and browse-able list, please visit:
 
 ## Experimental
 
-1.  AL-Base: [publication](https://doi.org/10.1080/13506120802676781);
-    [database](https://wwwapp.bumc.bu.edu/BEDAC_ALBase/).
-2.  AmyloBase: [publication](https://doi.org/10.1038%2Fembor.2011.116);
+1.  AmyloBase: [publication](https://doi.org/10.1038%2Fembor.2011.116);
     [database](http://bioserver2.sbsc.unifi.it/AmyloBase.html).
-3.  AmyloGraph: [publication](https://doi.org/10.1093/nar/gkac882);
+2.  AmyloGraph: [publication](https://doi.org/10.1093/nar/gkac882);
     [database](http://amylograph.com/).
-4.  Amyloid Atlas:
+3.  Amyloid Atlas:
     [publication](https://doi.org/10.1016/j.cell.2021.08.013);
     [database](https://people.mbi.ucla.edu/sawaya/amyloidatlas/).
-5.  AmyPro: [publication](https://doi.org/10.1093/nar/gkx950);
+4.  AmyPro: [publication](https://doi.org/10.1093/nar/gkx950);
     [database](http://amypro.net).
-6.  CPAD2: [publication](https://doi.org/10.1080/13506129.2020.1715363);
+5.  CPAD2: [publication](https://doi.org/10.1080/13506129.2020.1715363);
     [database](https://web.iitm.ac.in/bioinfo2/cpad2/index.html).
-7.  SAPdb:
-    [publication](https://doi.org/10.1016/j.compbiomed.2021.104391);
-    [database](https://webs.iiitd.edu.in/raghava/sapdb/).
 
 ## Prediction
 

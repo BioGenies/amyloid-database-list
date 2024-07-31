@@ -131,19 +131,26 @@ To collect amyloid-related databases, we searched PubMed, Google and Google Scho
 We manually curated all information for databases featured in a **Amyloid-related database list** tab. To do that we carefully analysed publications and/or websites describing given database looking for the following information:
 
 - link to the web server (integrated into **Database name** column),
-- link to the paper (if applicable) (**DOI** column),
-- external sources of proteins/peptides in database (we didn't mention own discoveries) and links to and other sources that are integrated into the database (**Data sources and links to other db** column).
-- what kind of data do they store (**Type of data** column)
-- current status of database (**Current status**)
+- what is their focus, amyloids, prions, IDPs, interactions (**Focus** column)
+- what kind of data do they store, experimental, predictions or both (**Type of data** column)
+- do they store only amyloids (**Only amyloids** column)
+- do they include experimental conditions (**Includes experimental conditions** column)
+- usability of data creating generalized models (**Usability** column),
+- what kind of structural information is gathered (*Includes structural information** column),
+- do they highlight proteins APRs (**Identifies APRs** column),
+- current status of database (**Current status**),
+- date of last update or publication date (**Last updated** column),
+- external sources of proteins/peptides in database (we didn't mention own discoveries) and links to and other sources that are integrated into the database (**Data sources and links to other db** column),
+- link to publication (**DOI** column)
 
-Then, we checked if the links to the databases provided in the articles were still working and if they function correctly. Otherwise, we tried to find the link either through a search engine search or by contacting the database developers. 
+Then, we checked if the links to the databases provided in the articles function correctly. Otherwise, we tried to find them either through a search engine or by contacting the database developers. 
 
 The **Updates** tab indicates latest changes in the list.
 
 
 ### Updates
 
-**30/07/2024** - first release
+**17/07/2024** - first release
 
 
 ### About and citation

@@ -10,7 +10,7 @@ For an interactive and browse-able list, please visit:
 
 - [Experimental](#experimental)
 - [Prediction](#prediction)
-- [Both](#both)
+- [Experimental and prediction](#experimental-and-prediction)
 
 ## Experimental
 
@@ -28,17 +28,15 @@ For an interactive and browse-able list, please visit:
 
 ## Prediction
 
-1.  aSynPEP-DB: [publication](https://doi.org/10.1093/database/baad084);
-    [database](https://asynpepdb.ppmclab.com/).
-2.  CARs DB: [publication](https://doi.org/10.3389/fmolb.2022.882160);
+1.  CARs DB: [publication](https://doi.org/10.3389/fmolb.2022.882160);
     [database](http://carsdb.ppmclab.com/).
-3.  Fibrilizer:
+2.  Fibrilizer:
     [publication](http://dx.doi.org/10.1016/j.bpj.2012.12.037);
     [database](https://amyloid.cs.mcgill.ca/database/index.html).
-4.  PrionScan: [publication](https://doi.org/10.1186/1471-2164-15-102);
+3.  PrionScan: [publication](https://doi.org/10.1186/1471-2164-15-102);
     [database](http://webapps.bifi.es/prionscan).
 
-## Both
+## Experimental and prediction
 
 1.  AmyLoad:
     [publication](https://doi.org/10.1093/bioinformatics/btv375);

@@ -49,8 +49,8 @@ dat <- read_sheet("https://docs.google.com/spreadsheets/d/14eZvhdwBjI4a9AT7DwS3Q
 # cat_df <- data.frame(categories = c("Active", "Non-active"),
                      # nice_names = c("Active", "Non-active"))
 
-cat_df <- data.frame(categories = c("Experimental", "Prediction", "Both"),
-                     nice_names = c("Experimental", "Prediction", "Both"))
+cat_df <- data.frame(categories = c("Experimental", "Prediction", "Experimental and prediction"),
+                     nice_names = c("Experimental", "Prediction", "Experimental and prediction"))
 
 all_tools <- sapply(1L:nrow(cat_df), function(ith_category_id) {
   part_dat <- dat %>% filter(`Type of data` == cat_df[ith_category_id, "categories"])

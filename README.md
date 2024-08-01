@@ -53,3 +53,15 @@ For an interactive and browse-able list, please visit:
 ### About and citation
 
 This website accompanies our publication:
+
+This project was supported by the National Science Centre Poland, SONATA
+19 grant \[2023/51/D/NZ7/02847\].
+
+[<img src="docs/ncn_logo.png" width="600"
+alt="National Science Centre Poland" />](https://ncn.gov.pl/en)
+
+Open access was funded by Medical University of Białystok,
+\[B.SUB.24.592\].
+
+[<img src="docs/mub_logo.png" width="100"
+alt="Medical University of Bialystok" />](https://www.umb.edu.pl/en/index.php)

@@ -158,3 +158,13 @@ The **Updates** tab indicates latest changes in the list.
 ```{r, echo=FALSE,results='asis'}
 cat(readLines("../data/citation.md"), sep = "\n")
 ```
+
+This project was supported by the National Science Centre Poland, SONATA 19 grant [2023/51/D/NZ7/02847]. 
+
+[![National Science Centre Poland](ncn_logo.png){width=600}](https://ncn.gov.pl/en)   
+
+Open access was funded by Medical University of Białystok, [B.SUB.24.592].
+
+[![National Science Centre Poland](mub_logo.png){width=100}](https://www.umb.edu.pl/en/index.php)
+
+

@@ -116,9 +116,9 @@ datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader', 'ColReor
   formatStyle(c("Database"),
               backgroundColor = '#d6edff') %>% 
   formatStyle(c("Current status"),
-              backgroundColor = styleEqual(c("Active", "Non-active"), c('#d6edff', 'gray'), default = '#d6edff')) %>% 
+              backgroundColor = styleEqual(c("Active", "Non-active"), c('#d6edff', '#d3d3d3'), default = '#d6edff'), color = "black") %>% 
   formatStyle(c("Last updated"),
-              backgroundColor = styleEqual(c(NA, ""), c('gray', 'gray'), default = '#d6edff'))
+              backgroundColor = styleEqual(c(NA, "NA"), c('#d3d3d3', '#d3d3d3'), default = '#d6edff'), color = "black")
 ```
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">

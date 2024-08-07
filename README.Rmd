@@ -37,13 +37,13 @@ write_entry <- function(x) {
 # dat <- readr::read_csv("data/amyloid_db.csv") %>% 
 #   filter(`Current status` == "Active") %>%
 #   select("Database", "Focus", "Type of data", "Only amyloids", "Includes experimental conditions", "Usability",
-#          "Includes structural information", "Identifies APRs", "Data sources and links to other db", "Current status", "Last updated", "doi", "link")
+#          "Includes structural information", "Identifies APRs", "Data sources and links to other db", "Current status", "Published or last update", "doi", "link")
 
 dat <- read_sheet("https://docs.google.com/spreadsheets/d/14eZvhdwBjI4a9AT7DwS3QbYioYorrzAqu3zgNUZqDSA/edit?usp=sharing",sheet = "database_list", col_types = "c") %>% 
   select(1:14) %>% 
   filter(`Current status` == "Active") %>%
   select("Database", "Focus", "Type of data", "Only amyloids", "Includes experimental conditions", "Usability",
-         "Includes structural information", "Identifies APRs", "Current status", "Last updated", "Data sources and links to other db", "doi", "link")
+         "Includes structural information", "Identifies APRs", "Current status", "Published or last update", "Data sources and links to other db", "doi", "link")
 
 
 # cat_df <- data.frame(categories = c("Active", "Non-active"),

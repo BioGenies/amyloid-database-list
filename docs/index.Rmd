@@ -29,7 +29,7 @@ dat <- read_sheet("https://docs.google.com/spreadsheets/d/14eZvhdwBjI4a9AT7DwS3Q
                         str_remove(., 'https://doi.org/') 
                       %>% str_remove(., 'http://dx.doi.org/'),"</a>"),
          Database = paste0("<a href='", link,"'  target='_blank'>", Database, "</a>"),
-         `Last updated` = `Last updated` %>% as.Date(., "%d-%m-%Y"),
+         `Published or last update` = `Published or last update` %>% as.Date(., "%d-%m-%Y"),
          Focus = Focus %>% as.factor(),
          `Type of data` = `Type of data` %>% as.factor(),
          `Includes experimental conditions` = `Includes experimental conditions` %>% as.factor(),
@@ -39,8 +39,8 @@ dat <- read_sheet("https://docs.google.com/spreadsheets/d/14eZvhdwBjI4a9AT7DwS3Q
          `Current status` = `Current status` %>% as.factor(),
          `Only amyloids` = `Only amyloids` %>% as.factor()) %>% 
   select("Database", "Focus", "Type of data", "Only amyloids", "Includes experimental conditions", "Usability",
-         "Includes structural information", "Identifies APRs", "Current status", "Last updated", "Data sources and links to other db", "DOI") %>% 
-  arrange(desc(`Last updated`))
+         "Includes structural information", "Identifies APRs", "Current status", "Published or last update", "Data sources and links to other db", "DOI") %>% 
+  arrange(., `Current status`, desc(`Published or last update`))
 
 # dat <- readr::read_csv("../data/amyloid_db.csv", col_select = c(, 1:14), col_types = "fcfffffff?cccf") %>% 
 #   # filter(`Current status` == "Active") %>% 
@@ -48,10 +48,10 @@ dat <- read_sheet("https://docs.google.com/spreadsheets/d/14eZvhdwBjI4a9AT7DwS3Q
 #                         str_remove(., 'https://doi.org/') 
 #                       %>% str_remove(., 'http://dx.doi.org/'),"</a>"),
 #          Database = paste0("<a href='", link,"'  target='_blank'>", Database, "</a>"),
-#          `Last updated` = `Last updated` %>% as.Date(., "%d-%m-%Y"),) %>% 
+#          `Published or last update` = `Published or last update` %>% as.Date(., "%d-%m-%Y"),) %>% 
 #   select("Database", "Focus", "Type of data", "Only amyloids", "Includes experimental conditions", "Usability",
-#          "Includes structural information", "Identifies APRs", "Current status", "Last updated", "Data sources and links to other db", "DOI") %>% 
-#   arrange(desc(`Last updated`))
+#          "Includes structural information", "Identifies APRs", "Current status", "Published or last update", "Data sources and links to other db", "DOI") %>% 
+#   arrange(desc(`Published or last update`))
 
 
 hover_text <- c("Name and link to a database",
@@ -62,9 +62,9 @@ hover_text <- c("Name and link to a database",
                 "Indicates the database usability",
                 "Indicates if database contains structural information of proteins and peptides",
                 "Indicates if database identifies amyloidogenic regions of proteins",
-                "The data sources of database and links to other databases",
-                "The last update",
                 "Current status of database",
+                "The last update or publication date",
+                "The data sources of database and links to other databases",
                 "DOI")
 
 
@@ -117,7 +117,7 @@ datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader', 'ColReor
               backgroundColor = '#d6edff') %>% 
   formatStyle(c("Current status"),
               backgroundColor = styleEqual(c("Active", "Non-active"), c('#d6edff', '#d3d3d3'), default = '#d6edff'), color = "black") %>% 
-  formatStyle(c("Last updated"),
+  formatStyle(c("Published or last update"),
               backgroundColor = styleEqual(c(NA, "NA"), c('#d3d3d3', '#d3d3d3'), default = '#d6edff'), color = "black")
 ```
 
@@ -139,7 +139,7 @@ We manually curated all information for databases featured in a **Amyloid-relate
 - what kind of structural information is gathered (*Includes structural information** column),
 - do they highlight proteins APRs (**Identifies APRs** column),
 - current status of database (**Current status**),
-- date of last update or publication date (**Last updated** column),
+- date of last update or publication date (**Published or last update** column),
 - external sources of proteins/peptides in database (we didn't mention own discoveries) and links to and other sources that are integrated into the database (**Data sources and links to other db** column),
 - link to publication (**DOI** column)
 
@@ -150,6 +150,7 @@ The **Updates** tab indicates latest changes in the list.
 
 ### Updates
 
+**08/08/2024** - minor name corrections made | No status changes in inactive amyloid databases | Server instability reported for AmyLoad
 **17/07/2024** - first release
 
 

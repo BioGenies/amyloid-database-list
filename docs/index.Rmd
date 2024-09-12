@@ -150,7 +150,10 @@ The **Updates** tab indicates latest changes in the list.
 
 ### Updates
 
-**08/08/2024** - minor name corrections made | No status changes in inactive amyloid databases | Server instability reported for AmyLoad
+**12/09/2024** - soon we will deploy **AmyLoad** on new server
+
+**08/08/2024** - minor name corrections made | No status changes in inactive amyloid databases | Server instability reported for **AmyLoad**
+
 **17/07/2024** - first release
 
 

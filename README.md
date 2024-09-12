@@ -8,11 +8,12 @@
 For an interactive and browse-able list, please visit:
 <https://biogenies.info/amyloid-database-list/>.
 
-- [Experimental](#experimental)
-- [Prediction](#prediction)
-- [Experimental and prediction](#experimental-and-prediction)
+- [Only experimental data](#only-experimental-data)
+- [Predictions](#predictions)
+- [Experimental data and
+  predictions](#experimental-data-and-predictions)
 
-## Experimental
+## Only experimental data
 
 1.  AmyloBase: [publication](https://doi.org/10.1038%2Fembor.2011.116);
     [database](http://bioserver2.sbsc.unifi.it/AmyloBase.html).
@@ -26,7 +27,7 @@ For an interactive and browse-able list, please visit:
 5.  CPAD2: [publication](https://doi.org/10.1080/13506129.2020.1715363);
     [database](https://web.iitm.ac.in/bioinfo2/cpad2/index.html).
 
-## Prediction
+## Predictions
 
 1.  CARs DB: [publication](https://doi.org/10.3389/fmolb.2022.882160);
     [database](http://carsdb.ppmclab.com/).
@@ -36,7 +37,7 @@ For an interactive and browse-able list, please visit:
 3.  PrionScan: [publication](https://doi.org/10.1186/1471-2164-15-102);
     [database](http://webapps.bifi.es/prionscan).
 
-## Experimental and prediction
+## Experimental data and predictions
 
 1.  AmyLoad:
     [publication](https://doi.org/10.1093/bioinformatics/btv375);

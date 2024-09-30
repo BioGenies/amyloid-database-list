@@ -21,6 +21,7 @@ knitr::opts_chunk$set(echo = FALSE)
 library(DT)
 library(dplyr)
 library(stringr)
+library(forcats)
 library(googlesheets4)
 
 dat <- read_sheet("https://docs.google.com/spreadsheets/d/14eZvhdwBjI4a9AT7DwS3QbYioYorrzAqu3zgNUZqDSA/edit?usp=sharing",sheet = "database_list", col_types = "c") %>% 
@@ -40,7 +41,7 @@ dat <- read_sheet("https://docs.google.com/spreadsheets/d/14eZvhdwBjI4a9AT7DwS3Q
          `Only amyloids` = `Only amyloids` %>% as.factor()) %>% 
   select("Database", "Focus", "Type of data", "Only amyloids", "Includes experimental conditions", "Usability",
          "Includes structural information", "Identifies APRs", "Current status", "Published or last update", "Data sources and links to other db", "DOI") %>% 
-  arrange(., `Current status`, desc(`Published or last update`))
+  arrange(., `Current status` %>% fct_relevel("Active", "Non-functional", "Non-active"), desc(`Published or last update`))
 
 # dat <- readr::read_csv("../data/amyloid_db.csv", col_select = c(, 1:14), col_types = "fcfffffff?cccf") %>% 
 #   # filter(`Current status` == "Active") %>% 
@@ -116,9 +117,9 @@ datatable(dat, extensions = c('Buttons', 'FixedColumns', 'FixedHeader', 'ColReor
   formatStyle(c("Database"),
               backgroundColor = '#d6edff') %>% 
   formatStyle(c("Current status"),
-              backgroundColor = styleEqual(c("Active", "Non-active"), c('#d6edff', '#d3d3d3'), default = '#d6edff'), color = "black") %>% 
+              backgroundColor = styleEqual(c("Active", "Non-functional", "Non-active"), c('#d6edff', '#d3d3d3', '#FF4C4C'), default = '#d6edff'), color = "black") %>% 
   formatStyle(c("Published or last update"),
-              backgroundColor = styleEqual(c(NA, "NA"), c('#d3d3d3', '#d3d3d3'), default = '#d6edff'), color = "black")
+              backgroundColor = styleEqual(c(NA, "NA"), c('#FF4C4C', '#FF4C4C'), default = '#d6edff'), color = "black")
 ```
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
@@ -150,7 +151,7 @@ The **Updates** tab indicates latest changes in the list.
 
 ### Updates
 
-**12/09/2024** - soon we will deploy **AmyLoad** on new server
+**30/09/2024** - change status of ZipperDB to non-functional instead of non-active
 
 **08/08/2024** - minor name corrections made | No status changes in inactive amyloid databases | Server instability reported for **AmyLoad**
 

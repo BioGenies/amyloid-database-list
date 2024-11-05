@@ -151,6 +151,8 @@ The **Updates** tab indicates latest changes in the list.
 
 ### Updates
 
+**05/11/2024** - article online, added citation
+
 **30/09/2024** - change status of ZipperDB to non-functional instead of non-active
 
 **08/08/2024** - minor name corrections made | No status changes in inactive amyloid databases | Server instability reported for **AmyLoad**

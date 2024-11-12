@@ -53,16 +53,27 @@ For an interactive and browse-able list, please visit:
 
 ### About and citation
 
+The database was developed by **BioGenies** team. If you want to get to
+know us and our projects visit our webpage
+[BioGenies](https://biogenies.info/).
+
 This website accompanies our publication:
 
-This project was supported by the National Science Centre Poland, SONATA
-19 grant \[2023/51/D/NZ7/02847\].
+Iglesias V, Chilimoniuk J, Pintado-Grima C, Bárcenas O, Ventura S,
+Burdukiewicz M (2024). “Aggregating Amyloid Resources: A Comprehensive
+Review of Databases on Amyloid-like Aggregation.” *Computational and
+Structural Biotechnology Journal*. ISSN 2001-0370,
+<doi:10.1016/j.csbj.2024.10.047>,
+<https://doi.org/10.1016/j.csbj.2024.10.047>, \<2024-11-05\>
+
+This project was supported by the **National Science Centre Poland**,
+SONATA 19 grant \[**2023/51/D/NZ7/02847**\].
 
 [<img src="docs/ncn_logo.png" width="600"
 alt="National Science Centre Poland" />](https://ncn.gov.pl/en)
 
-Open access was funded by Medical University of Białystok,
-\[B.SUB.24.592\].
+Open access was funded by **Medical University of Białystok**,
+\[**B.SUB.24.592**\].
 
 [<img src="docs/mub_logo.png" width="100"
 alt="Medical University of Bialystok" />](https://www.umb.edu.pl/en/index.php)

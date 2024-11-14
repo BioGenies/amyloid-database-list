@@ -137,7 +137,7 @@ We manually curated all information for databases featured in a **Amyloid-relate
 - do they store only amyloids (**Only amyloids** column)
 - do they include experimental conditions (**Includes experimental conditions** column)
 - usability of data creating generalized models (**Usability** column),
-- what kind of structural information is gathered (*Includes structural information** column),
+- what kind of structural information is gathered (**Includes structural information** column),
 - do they highlight proteins APRs (**Identifies APRs** column),
 - current status of database (**Current status**),
 - date of last update or publication date (**Published or last update** column),
